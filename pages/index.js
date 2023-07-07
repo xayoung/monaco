@@ -91,12 +91,12 @@ export default function Home() {
 
     ws.addEventListener("close", () => {
       setConnected(false);
-      setBlocking((isBlocking) => {
-        if (!retry.current && !isBlocking)
-          retry.current = window.setTimeout(() => {
-            initWebsocket(handleMessage);
-          }, 1000);
-      });
+      // setBlocking((isBlocking) => {
+      //   if (!retry.current && !isBlocking)
+      //     retry.current = window.setTimeout(() => {
+      //       initWebsocket(handleMessage);
+      //     }, 1000);
+      // });
     });
 
     ws.addEventListener("error", () => {
@@ -135,6 +135,7 @@ export default function Home() {
   useEffect(() => {
     if (blocking) {
       // socket.current?.close();
+      console.log(' blocking useEffect')
       setTimeout(() => {
         setTriggerConnection((n) => n + 1);
       }, 100);
@@ -144,6 +145,7 @@ export default function Home() {
   useEffect(() => {
     let interval;
     if (Date.now() < delayTarget) {
+      console.log(' delayTarget useEffect')
       interval = setInterval(() => {
         setTriggerTick((n) => n + 1);
         if (Date.now() >= delayTarget) clearInterval(interval);
