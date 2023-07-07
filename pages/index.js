@@ -134,7 +134,7 @@ export default function Home() {
 
   useEffect(() => {
     if (blocking) {
-      socket.current?.close();
+      // socket.current?.close();
       setTimeout(() => {
         setTriggerConnection((n) => n + 1);
       }, 100);
@@ -348,6 +348,7 @@ export default function Home() {
                   e.preventDefault();
                   const form = new FormData(e.target);
                   const delayMsValue = Number(form.get("delayMs"));
+                  socket.current?.close();
                   setBlocking(true);
                   setDelayMs(delayMsValue);
                   setDelayTarget(Date.now() + delayMsValue);
