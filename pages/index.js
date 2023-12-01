@@ -367,19 +367,12 @@ export default function Home() {
                 <p style={{ marginRight: "var(--space-4)" }}>ms</p>
               </form>
               <a
-                href="https://www.histreams.net/home"
-                target="_blank"
-                style={{ color: "white" }}
-              >
-                Histreams
-              </a>
-              {/* <a
                 href="https://github.com/tdjsnelling/monaco"
                 target="_blank"
                 style={{ color: "grey" }}
               >
                 tdjsnelling/monaco
-              </a> */}
+              </a>
             </div>
           </div>
 
@@ -668,7 +661,7 @@ export default function Home() {
           </div>
         </ResponsiveTable>
 
-        {/* <ResponsiveTable
+        <ResponsiveTable
           style={{
             borderBottom: "1px solid var(--colour-border)",
           }}
@@ -728,17 +721,17 @@ export default function Home() {
                   ))}
               </ul>
             )}
-          </div> 
-        </ResponsiveTable>*/}
+          </div>
+        </ResponsiveTable>
 
-        {/* <p
+        <p
           style={{ color: "grey", padding: "var(--space-3)", fontSize: "11px" }}
         >
           f1.tdjs.tech is not associated in any way with Formula 1 or any other
           Formula 1 companies. All data displayed is publicly available and used
           in a non-commercial, fair use setting. Map data provided by
           api.multiviewer.app.
-        </p> */}
+        </p>
       </main>
     </>
   );
